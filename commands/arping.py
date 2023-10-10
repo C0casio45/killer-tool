@@ -14,9 +14,15 @@ def inputHandler(text):
         inputHandler("Invalid IP address, please try again or press e to exit: ")
     return ip
 
-ip = inputHandler("Enter the IP address: ")
+ip = inputHandler("Enter the first IP adress (/24): ").split(".")
 
+for i in range(0,255):
+    os.system(f"arping {ip[0]}.{ip[1]}.{ip[2]}.{i} -i eth0")
 
-
-os.system(f"nmap -sV -sC -Pn -oN nmap/{ip}-nmap_scan.txt " + ip)
-
+# 192.168.0.10 is alive
+# 192.168.0.13 is alive
+# 192.168.0.15 is alive
+# 192.168.0.18 is alive
+# 192.168.0.35 is alive
+# 192.168.0.36 is alive
+# 192.168.0.50 is alive
