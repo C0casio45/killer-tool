@@ -30,12 +30,9 @@ print(f'''
 
 useragents = open('commands/assets/text/headers.txt', 'r+').readlines()
 
-http_proxies = get(
-    "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt").text.split("\n")
-socks4_proxy = get(
-    "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt").text.split("\n")
-socks5_proxy = get(
-    "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt").text.split("\n")
+http_proxies = open('commands/assets/text/http.txt', 'r+').readlines()
+socks4_proxy = open('commands/assets/text/socks4.txt', 'r+').readlines()
+socks5_proxy = open('commands/assets/text/socks5.txt', 'r+').readlines()
 
 
 def Main_Menu():  # in This Function Septum The Url To Make It Usable For The FutureSetting Of HttpRequests
